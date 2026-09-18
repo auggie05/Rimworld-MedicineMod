@@ -1,1 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><Defs>
 
+    <ThingDef ParentName="MakeableDrugBase">
+        <!--XML Name-->
+        <defName>Traumex</defName>
+        <!--Name in game-->
+        <label>Traumex Autoinjector</label>
+        <description>A drug that signifigantly reduces pain and slows heavy bleeding.</description>
+
+    </ThingDef>
+</Defs>
