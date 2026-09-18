@@ -64,7 +64,10 @@
     </comps>
       <stages>
         <li>
-          <painFactor>0.33</painFactor>
+            <painFactor>0.33</painFactor>
+            <statOffsets>
+                <PainShockThreshold>0.20</PainShockThreshold> <!-- Adds +15% to their baseline (e.g., 80% becomes 95%) -->
+            </statOffsets>
         </li>
       </stages>
     </HediffDef>
