@@ -39,8 +39,8 @@
         </costList>
         <comps>
             <li Class="CompProperties_Drug">
-                <chemical>Traumex</chemical>
                 <listOrder>40</listOrder>
+                <overdoseSeverityOffset>0.8~0.24</overdoseSeverityOffset>
             </li>
         </comps>
 
