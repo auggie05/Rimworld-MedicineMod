@@ -21,6 +21,7 @@
         <techLevel>Industrial</techLevel>
         <ingestible>
             <drugCategory>Medical</drugCategory>
+            <foodType>Processed</foodType>
             <outcomeDoers>
                 <li Class="IngestionOutcomeDoer_GiveHediff">
                 <hediffDef>TraumexHigh</hediffDef>
