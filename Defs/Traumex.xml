@@ -15,9 +15,7 @@
             <MarketValue>50</MarketValue>
             <Mass>0.01</Mass>
         </statBases>
-        <costList>
-            <Neutroamine>4</Neutroamine>
-        </costList>
+
         <techLevel>Industrial</techLevel>
         <ingestible>
             <drugCategory>Medical</drugCategory>
@@ -29,7 +27,24 @@
                 </li>
             </outcomeDoers>
         </ingestible>
-
+        <recipeMaker>
+        <researchPrerequisite>PenoxycylineProduction</researchPrerequisite>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <displayPriority>2100</displayPriority>
+        </recipeMaker>
+        <costList>
+            <Neutroamine>4</Neutroamine>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Drug">
+                <chemical>Traumex</chemical>
+                <addictiveness>0.030</addictiveness>
+                <minToleranceToAddict>0.15</minToleranceToAddict>
+                <listOrder>40</listOrder>
+            </li>
+        </comps>
 
 
     </ThingDef>
