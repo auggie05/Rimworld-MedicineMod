@@ -28,11 +28,11 @@
             </outcomeDoers>
         </ingestible>
         <recipeMaker>
-        <researchPrerequisite>PenoxycylineProduction</researchPrerequisite>
-        <recipeUsers>
-            <li>DrugLab</li>
-        </recipeUsers>
-        <displayPriority>2100</displayPriority>
+          <researchPrerequisite>DrugProduction</researchPrerequisite>
+          <recipeUsers>
+              <li>DrugLab</li>
+          </recipeUsers>
+          <displayPriority>2100</displayPriority>
         </recipeMaker>
         <costList>
             <Neutroamine>4</Neutroamine>
@@ -40,8 +40,6 @@
         <comps>
             <li Class="CompProperties_Drug">
                 <chemical>Traumex</chemical>
-                <addictiveness>0.030</addictiveness>
-                <minToleranceToAddict>0.15</minToleranceToAddict>
                 <listOrder>40</listOrder>
             </li>
         </comps>
