@@ -61,11 +61,11 @@
             <showHoursToRecover>true</showHoursToRecover>
         </li>
         <!-- Condition 1: Remove the Overdose hediff immediately -->
-        <!--
+        
         <li Class="HediffCompProperties_RemoveIfOtherHediff">
             <hediffs>
                 <li>DrugOverdose</li>
-            </hediffs> -->
+            </hediffs> 
         </li>
     </comps>
     </HediffDef>
