@@ -56,15 +56,17 @@
     <maxSeverity>1.0</maxSeverity>
     <isBad>false</isBad>
     <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-1</severityPerDay>
-        <showHoursToRecover>true</showHoursToRecover>
-      </li>
-    </comps>
-      <stages>
-        <li>
-          <painFactor>0.33</painFactor>
+        <li Class="HediffCompProperties_SeverityPerDay">
+            <severityPerDay>-24</severityPerDay>
+            <showHoursToRecover>true</showHoursToRecover>
         </li>
-      </stages>
+        <!-- Condition 1: Remove the Overdose hediff immediately -->
+        <!--
+        <li Class="HediffCompProperties_RemoveIfOtherHediff">
+            <hediffs>
+                <li>DrugOverdose</li>
+            </hediffs> -->
+        </li>
+    </comps>
     </HediffDef>
 </Defs>
