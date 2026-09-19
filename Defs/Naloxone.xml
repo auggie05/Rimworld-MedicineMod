@@ -2,17 +2,17 @@
 
     <ThingDef ParentName="MakeableDrugBase">
         <!--XML Name-->
-        <defName>Traumex</defName>
+        <defName>Naloxone</defName>
         <!--Name in game-->
-        <label>Traumex Autoinjector</label>
-        <description>A drug that signifigantly reduces pain and slows heavy bleeding.</description>
+        <label>Naloxone</label>
+        <description>A drug that can reduce or reverse the effects of an overdose.</description>
         <graphicData>
-            <texPath>Things/Item/Drug/Traumex</texPath>
+            <texPath>Things/Item/Drug/Naloxone</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <statBases>
-            <WorkToMake>750</WorkToMake>
-            <MarketValue>50</MarketValue>
+            <WorkToMake>500</WorkToMake>
+            <MarketValue>5</MarketValue>
             <Mass>0.01</Mass>
         </statBases>
 
@@ -22,7 +22,7 @@
             <foodType>Processed</foodType>
             <outcomeDoers>
                 <li Class="IngestionOutcomeDoer_GiveHediff">
-                <hediffDef>TraumexHigh</hediffDef>
+                <hediffDef>NaloxoneHigh</hediffDef>
                 <severity>1.0</severity>
                 </li>
             </outcomeDoers>
@@ -35,12 +35,11 @@
           <displayPriority>2100</displayPriority>
         </recipeMaker>
         <costList>
-            <Neutroamine>4</Neutroamine>
+            <Neutroamine>1</Neutroamine>
         </costList>
         <comps>
             <li Class="CompProperties_Drug">
                 <listOrder>40</listOrder>
-                <overdoseSeverityOffset>0.8~0.24</overdoseSeverityOffset>
             </li>
         </comps>
 
@@ -48,27 +47,26 @@
     </ThingDef>
 
     <HediffDef>
-    <defName>TraumexHigh</defName>
+    <defName>NaloxoneHigh</defName>
     <hediffClass>Hediff_High</hediffClass>
-    <label>Traumex</label>
-    <description>Traumex currently in pawn's system.</description>
+    <label>Naloxone</label>
+    <description>Naloxone currently in pawn's system.</description>
     <defaultLabelColor>(1,1,1)</defaultLabelColor>
     <scenarioCanAdd>true</scenarioCanAdd>
     <maxSeverity>1.0</maxSeverity>
     <isBad>false</isBad>
     <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-3.0</severityPerDay>
-        <showHoursToRecover>true</showHoursToRecover>
-      </li>
-    </comps>
-      <stages>
-        <li>
-            <painFactor>0.33</painFactor>
-            <statOffsets>
-                <PainShockThreshold>0.20</PainShockThreshold> <!-- Adds +15% to their baseline (e.g., 80% becomes 95%) -->
-            </statOffsets>
+        <li Class="HediffCompProperties_SeverityPerDay">
+            <severityPerDay>-24</severityPerDay>
+            <showHoursToRecover>true</showHoursToRecover>
         </li>
-      </stages>
+        <!-- Condition 1: Remove the Overdose hediff immediately -->
+        
+        <li Class="HediffCompProperties_RemoveIfOtherHediff">
+            <hediffs>
+                <li>DrugOverdose</li>
+            </hediffs> 
+        </li>
+    </comps>
     </HediffDef>
 </Defs>

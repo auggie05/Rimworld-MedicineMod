@@ -1,0 +1,12 @@
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="DrugOverdose"]/comps</xpath>
+    <value>
+      <li Class="HediffCompProperties_RemoveIfOtherHediff">
+        <hediffs>
+          <li>NaloxoneHigh</li>
+        </hediffs>
+      </li>
+    </value>
+  </Operation>
+</Patch>
