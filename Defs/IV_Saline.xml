@@ -2,18 +2,18 @@
 
     <ThingDef ParentName="MakeableDrugBase">
         <!--XML Name-->
-        <defName>Naloxone</defName>
+        <defName>IVSaline</defName>
         <!--Name in game-->
-        <label>Naloxone</label>
+        <label>Saline IV</label>
         <description>A drug that can reduce or reverse the effects of an overdose.</description>
         <graphicData>
-            <texPath>Things/Item/Drug/Naloxone</texPath>
+            <texPath>Things/Item/Drug/IV_Saline</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <statBases>
-            <WorkToMake>500</WorkToMake>
+            <WorkToMake>250</WorkToMake>
             <MarketValue>5</MarketValue>
-            <Mass>0.01</Mass>
+            <Mass>1</Mass>
         </statBases>
 
         <techLevel>Industrial</techLevel>
@@ -22,7 +22,7 @@
             <foodType>Processed</foodType>
             <outcomeDoers>
                 <li Class="IngestionOutcomeDoer_GiveHediff">
-                <hediffDef>NaloxoneHigh</hediffDef>
+                <hediffDef>SalineHigh</hediffDef>
                 <severity>1.0</severity>
                 </li>
             </outcomeDoers>
@@ -47,25 +47,37 @@
     </ThingDef>
 
     <HediffDef>
-    <defName>NaloxoneHigh</defName>
-    <hediffClass>Hediff_High</hediffClass>
-    <label>Naloxone</label>
-    <description>Naloxone currently in pawn's system.</description>
-    <defaultLabelColor>(1,1,1)</defaultLabelColor>
-    <scenarioCanAdd>true</scenarioCanAdd>
-    <maxSeverity>1.0</maxSeverity>
-    <isBad>false</isBad>
-    <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-1</severityPerDay>
-        <showHoursToRecover>true</showHoursToRecover>
-      </li>
-    </comps>
-      <stages>
-        <li>
-          <painFactor>0.33</painFactor>
-          
-        </li>
-      </stages>
+        <defName>SalineHigh</defName>
+        <hediffClass>Hediff_High</hediffClass>
+        <label>Saline IV</label>
+        <description>Saline currently in pawn's system.</description>
+        <defaultLabelColor>(1,1,1)</defaultLabelColor>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-1</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>800mL</label>
+            </li>
+            <li>
+                <minSeverity>0.6</minSeverity>
+                <label>600mL</label>
+            </li>
+            <li>
+                <minSeverity>0.4</minSeverity>
+                <label>400mL</label>
+            </li>
+            <li>
+                <minSeverity>0.2</minSeverity>
+                <label>200mL</label>
+            </li>
+        </stages>
     </HediffDef>
 </Defs>
